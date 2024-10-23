@@ -1,0 +1,309 @@
+body {
+    font-family: 'Playfair Display', serif;
+    background-color: #001a33; /* Dark blue */
+    color: #e0e0e0;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+header {
+    background-color: #003366; /* Darker blue */
+    color: #e0e0e0;
+    padding: 30px 20px;
+    text-align: center;
+    border-bottom: 5px solid #004d00; /* Dark green */
+}
+header h1 {
+    font-size: 2.5em;
+    margin: 0;
+}
+
+nav {
+    background-color: #004d00; /* Dark green */
+}
+nav ul {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 10px 0;
+}
+
+nav ul li {
+    list-style-type: none;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #e0e0e0;
+    font-size: 1.3em;
+    padding: 10px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #66ff66; /* Light green for hover */
+}
+
+.character-card, .login-container {
+    background-color: rgba(0, 26, 51, 0.7); /* Semi-transparent dark blue */
+}
+
+.character-card h2, .login-container h1 {
+    color: #66ff66; /* Light green for headings */
+}
+
+.login-button, button {
+    background-color: #004d00; /* Dark green */
+    color: #e0e0e0;
+}
+
+.login-button:hover, button:hover {
+    background-color: #006600; /* Slightly lighter green for hover */
+}
+
+footer {
+    background-color: #000000; /* Black */
+    color: #e0e0e0;
+}
+
+/* Gallery styles update */
+.gallery-container {
+    background-color: rgba(0, 26, 51, 0.7); /* Semi-transparent dark blue */
+}
+
+.gallery img {
+    border-color: #004d00; /* Dark green border */
+}
+
+/* About page specific styles */
+.about-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.about-section p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: #e0e0e0;
+}
+/* Main content styling */
+main {
+    padding: 40px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Characters page styles */
+.characters-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.character-card {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.character-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+}
+
+.character-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.character-card h2 {
+    font-size: 1.2em;
+    padding: 15px 15px 5px;
+    margin: 0;
+}
+
+.character-card p {
+    font-size: 0.9em;
+    padding: 0 15px 15px;
+    margin: 0;
+    flex-grow: 1;
+}
+
+/* Gallery styles */
+.gallery-container {
+    max-width: 100%;
+    overflow-x: hidden;
+    padding: 20px 0;
+    background-color: rgba(10, 12, 87, 0.7);
+}
+
+.gallery {
+    display: flex;
+    overflow-x: auto;
+    gap: 15px;
+    padding: 20px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+
+.gallery::-webkit-scrollbar {
+    height: 8px;
+}
+
+.gallery::-webkit-scrollbar-track {
+    background: #04234d;
+}
+
+.gallery::-webkit-scrollbar-thumb {
+    background: #002200;
+    border-radius: 4px;
+}
+
+.gallery::-webkit-scrollbar-thumb:hover {
+    background: #013301;
+}
+
+.gallery img {
+    flex: 0 0 auto;
+    width: 250px;
+    height: 200px;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s;
+    scroll-snap-align: start;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
+/* Footer styles */
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: auto;
+    border-top: 3px solid #3b3b3b;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .characters-container {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        padding: 20px;
+    }
+
+    .character-card img {
+        height: 200px;
+    }
+
+    .gallery img {
+        width: 200px;
+        height: 150px;
+    }
+}
+/* Home page specific styles */
+.home-page {
+    background-image: url('https://ik.imagekit.io/hpapi/hogwarts.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.home-page::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 26, 51, 0.7); /* Semi-transparent dark blue overlay */
+    z-index: -1;
+}
+
+.home-page main {
+    background-color: rgba(0, 26, 51, 0.7); /* Semi-transparent dark blue */
+    padding: 40px;
+    border-radius: 10px;
+    max-width: 800px;
+    margin: 40px auto;
+}
+
+.home-page h2 {
+    color: #66ff66; /* Light green for headings */
+}
+
+.home-page p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+/* Sorting Hat Quiz specific styles */
+.sortinghat-card {
+    background-color: #444;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 600px;
+    border-radius: 8px;
+    text-align: left;
+}
+
+.sortinghat-card h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: white;
+}
+
+.sortinghat-question {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.sortinghat-options {
+    margin-bottom: 20px;
+}
+
+.sortinghat-options label {
+    display: block;
+    margin-bottom: 8px;
+    color: white;
+}
+
+.sortinghat-options input[type="radio"] {
+    margin-right: 10px;
+}
+
+.sortinghat-button {
+    padding: 10px 20px;
+    background-color: #555;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.sortinghat-button:hover {
+    background-color: #666;
+}
